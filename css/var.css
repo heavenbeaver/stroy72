@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+    /* Font */
+    --font-family: 'Montserrat', regular;
+    --fs-main: 1rem;
+    --fs-title: 1.5rem;
+    --fs-extra-large: 4rem;
+    /*  */
+    --fw-1: 500;
+    --fw-2: 600;
+    --fw-3: 800;
+    /* Colors */
+    --color-black: #000;
+    --color-green: #ae8a78;
+    --color-second: #5e5e5e;
+}

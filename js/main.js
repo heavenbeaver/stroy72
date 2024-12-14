@@ -43,3 +43,26 @@ document.addEventListener('scroll', () => {
     //     serviceCard_4.style.opacity = 1;
     // }
 })
+
+let moreBtn = document.querySelector('.more__projects__title');
+let moreContent = document.querySelector('.more__projects__content');
+
+moreBtn.addEventListener('click', () => {
+    if (!moreBtn.classList.contains('active')){
+        moreBtn.classList.add('active');
+        moreContent.style.display = 'flex';
+        setTimeout(function(){
+            moreContent.style.opacity = 1;
+            moreContent.style.height = '100%';
+        }, 100)
+    } else {
+        moreBtn.classList.remove('active');
+        moreContent.style.height = 0;
+        moreContent.style.opacity = 0;
+        setTimeout(function() {
+            moreContent.style.display = 'none';
+        }, 100)
+
+    }
+    
+})

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <title>Ремонт квартир в Тюмени</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -154,7 +155,7 @@
                 </div>
                 <div class="section__content slider__section">
                     <img id="sliderBtnLeft" src="./res/img/icons/free-icon-left-arrow-4103083.png" alt="">
-                    <div class="slider">
+                    <div class="slider" data-aos="fade-down">
                         <div class="slider__track">
                             <div class="slide">
                                 <div class="slide__img">
@@ -364,8 +365,11 @@
             <p>&copy; 2025 | "Ремонт квартир"</p>
         </div>
     </footer>
-
     <script src="./js/main.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

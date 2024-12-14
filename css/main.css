@@ -426,3 +426,7 @@ body {
     color: #fff;
     font-weight: var(--fw-1);
 }
+
+.contact__item a {
+    color: #000;
+}

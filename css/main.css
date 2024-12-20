@@ -7,7 +7,7 @@
     --fs-main: 1rem;
     --fs-main-2: 1.2rem;
     --fs-title: 1.4rem;
-    --fs-extra-large: 2rem;
+    --fs-extra-large: 3rem;
     /*  */
     --fw-1: 500;
     --fw-2: 600;
@@ -16,8 +16,8 @@
     --color-black: #000;
     --color-green: #ae8a78;
     --color-second: #5e5e5e;
-    --color-accent: #ff8e23;
-    /* --color-accent: #088641; */
+    --color-accent: #ff7f29;
+    /* --color-accent: #005288; */
 
 }
 
@@ -25,11 +25,11 @@ body {
     font-family: var(--font-family);
     font-size: var(--fs-main);
     font-weight: var(--fw-1);
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .container {
-    width: 1024px;
+    width: 1200px;
     margin: 0 auto;
 }
 
@@ -56,14 +56,36 @@ body {
 }
 
 .header {
-    padding: 1.0rem 0;
-    background-color: #fff;
-    box-shadow: 0 0 5px .1px var(--color-black);
-    z-index: 1000;
     position: fixed;
-    width: 100%;
     top: 0;
+    padding: 1.5rem 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    width: 100%;
+    display: block;
+    transition: .3s;
+}
 
+
+.header.scrolled {
+    background-color: #fff;
+    box-shadow: 0 0 2.8px .1px var(--color-black);
+}
+
+.header.scrolled .nav__item {
+    color: #000;
+}
+
+.header.scrolled .nav__item:hover {
+    color: var(--color-accent);
+}
+
+.header.scrolled .nav__tel {
+    color: #000;
+}
+
+.header.scrolled .nav__tel:hover {
+    color: var(--color-accent);
 }
 
 .nav {
@@ -73,7 +95,10 @@ body {
 }
 
 .nav__logo {
+    font-size: var(--fs-main-2);
     font-weight: var(--fw-2);
+    color: var(--color-accent);
+
 }
 
 .nav__list {
@@ -83,7 +108,7 @@ body {
 
 .nav__item {
     cursor: pointer;
-    color: var(--color-second);
+    color: #fff;
     transition: .3s ease;
     font-size: var(--fs-main);
 }
@@ -99,7 +124,7 @@ body {
 }
 
 .nav__item:hover {
-    color: var(--color-black);
+    color: var(--color-accent);
 }
 
 .nav__item:hover::after {
@@ -107,35 +132,56 @@ body {
 }
 
 .nav__tel {
-    color: #000;
+    color: #fff;
+    font-size: var(--fs-main-2);
     font-weight: var(--fw-2);
+    transition: .3s;
+}
+
+.nav__tel:hover {
+    color: var(--color-accent);
 }
 
 .header__banner {
-    background-image: url(../res/img/projects/banner_1_.webp);
-    /* filter: brightness(50%); */
+    background-image: url(../res/img/projects//3d-rendering-loft-luxury-living-room-with-bookshelf.webp);
     background-repeat: no-repeat;
     background-position: 0 15%; 
     background-size: cover;
-    height: fit-content;
-    padding-bottom: 5rem;
-    padding-top: 3rem;
+    box-sizing: border-box;
+    height: 100vh;
+    position: relative;
+}
+
+.header__banner::after {
+    content: '';
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
 }
 
 .header__text {
-    margin-left: auto;
-    width: 50%;
-    padding-top: 3rem;
-    background-color: #fff;
-    border-radius: 0 0 10px 10px;
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-    padding-right: 2rem;
+    position: absolute;
+    /* transform: translate(50%, 50%);
+    bottom: 50%;
+    right: 50%; */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 45rem;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 2rem;
+    border-radius: 5px;
 }
 
 .header__banner__title {
     font-size: var(--fs-extra-large);
     font-weight: var(--fw-2);
+
 }
 
 .header__banner__title span {
@@ -144,11 +190,11 @@ body {
 }
 
 .header__banner__text {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .banner__list {
-    line-height: 1.8rem;
+    line-height: 2rem;
 }
 
 .banner__list__item {
@@ -156,19 +202,20 @@ body {
     gap: 1rem;
     align-items: center;
     color: var(--color-second);
+    font-size: var(--fs-main);
 }
 
 .banner__list__item img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 .get-order__btn {
     display: block;
     background-color: var(--color-accent);
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: .5rem;
+    color: #fff;;
+    padding: 1rem 0;
+    border-radius: 5px;
     margin-top: 2rem;
     text-align: center;
     transition: .3s ease;
@@ -178,14 +225,44 @@ body {
     background-color: #ff5900;
 }
 
+.banner__arrow {
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    z-index: 3;
+    width: 50px;
+    left: 50%;
+    transform: translateX(50%);
+    bottom: 30px;
+    animation: jump 1.5s infinite;
+    cursor: pointer;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0px);
+    } 
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.about {
+    padding-top: 4rem;
+}
+
 .about__cards {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
 }
 
 .about__card {
-    width: 20rem;
+    width: auto;
+    max-width: 17rem;
     height: 20rem;
     padding: 1.2rem;
     border-radius: .5rem;
@@ -380,10 +457,10 @@ body {
     display: flex;
     margin-top: 2rem;
     gap: 1rem;
-    display: none;
+    /* display: none; */
     overflow: hidden;
-    height: 0;
-    opacity: 0;
+    /* height: 0; */
+    /* opacity: 0; */
     transition: 1s ease;
     overflow-x: scroll;
     /* padding-bottom: 2rem; */
@@ -461,7 +538,7 @@ body {
 .form__btn {
     width: fit-content;
     float: left;
-    background-color: #ff8e23;
+    background-color: var(--color-accent);
     border-radius: .5rem;
     padding: 1rem 1.5rem;
     color: #fff;

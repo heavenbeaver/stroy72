@@ -1,37 +1,29 @@
-// let slider = document.querySelector('.slider');
-// let sliderTrack = document.querySelector('.slider__track');
-// let slides = document.querySelectorAll('.slide');
-// let slide = document.querySelector('.slide');
-// // let sliderWrapper = document.querySelector('.slide__wrapper');
-// let sliderBtnLeft = document.getElementById('sliderBtnLeft');
-// let sliderBtnRight = document.getElementById('sliderBtnRight');
-// let counterText = document.querySelector('.slides__counter');
-// let counter = 1;
-// let currentPosition = 0;
-// let offset = slide.scrollWidth;
-// let maxOffset = (slides.length - 1) * -offset;
+const slides = document.querySelectorAll('.slide');
+const track = document.querySelector('.slider-track');
+let currentIndex = 0;
 
-// // начальное значение счетчика слайдера
-// counterText.innerText = `${counter} из ${slides.length}`
+// Установка начального активного слайда
+const updateActiveSlide = () => {
+    slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentIndex) {
+            slide.classList.add('active');
+        }
+    });
 
-// sliderBtnRight.addEventListener('click', () => {
-//     if (currentPosition > maxOffset) {
-//         currentPosition = currentPosition - offset;
-//         sliderTrack.style.transform = `translateX(${currentPosition}px)`;
-//         counter++;
-//         counterText.innerText = `${counter} из ${slides.length}`
-//     } else {
-//         return
-//     }
-// });
+    // Смещение ленты слайдов
+    const offset = -currentIndex * (slides[0].clientWidth + 20); // Учитываем ширину слайда и отступы
+    track.style.transform = `translateX(${offset}px)`;
+};
 
-// sliderBtnLeft.addEventListener('click', () => {
-//     if (currentPosition != 0) {
-//         currentPosition = currentPosition + offset;
-//         sliderTrack.style.transform = `translateX(${currentPosition}px)`;
-//         counter--;
-//         counterText.innerText = `${counter} из ${slides.length}`
-//     } else {
-//         return
-//     }
-// });
+// Автопрокрутка
+const autoSlide = () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateActiveSlide();
+};
+
+// Начинаем авто-слайд
+setInterval(autoSlide, 3000); // Автопрокрутка каждые 3 секунды
+
+// Инициализация
+updateActiveSlide();

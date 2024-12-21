@@ -3,7 +3,7 @@ const headerBanner = document.querySelector('.header__banner');
 
 window.addEventListener('scroll', () => {
     // проверяем на сколько прокрутился экран
-    if (window.scrollY >= headerBanner.scrollHeight) {
+    if (window.scrollY >= headerBanner.scrollHeight / 1.5) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');

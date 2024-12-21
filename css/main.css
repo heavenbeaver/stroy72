@@ -41,7 +41,7 @@ body {
     font-size: var(--fs-title);
     font-weight: var(--fw-2);
     text-align: center;
-    padding: 3rem 0 1.5rem 0;
+    padding: 4.2rem 0 1.5rem 0;
 }
 
 .section__flex {
@@ -59,7 +59,7 @@ body {
     position: fixed;
     top: 0;
     padding: 1.5rem 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 10;
     width: 100%;
     display: block;
@@ -70,6 +70,7 @@ body {
 .header.scrolled {
     background-color: #fff;
     box-shadow: 0 0 2.8px .1px var(--color-black);
+    padding: 1rem 0;
 }
 
 .header.scrolled .nav__item {
@@ -98,7 +99,7 @@ body {
     font-size: var(--fs-main-2);
     font-weight: var(--fw-2);
     color: var(--color-accent);
-
+    cursor: pointer;
 }
 
 .nav__list {
@@ -252,10 +253,6 @@ body {
     100% {
         transform: translateY(0px);
     }
-}
-
-.about {
-    padding-top: 4rem;
 }
 
 .about__cards {

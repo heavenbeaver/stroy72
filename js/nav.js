@@ -3,6 +3,7 @@ const navBtnServices = document.getElementById('services');
 const navBtnPortfolio = document.getElementById('portfolio');
 const navBtnContacts = document.getElementById('contacts');
 const logo = document.querySelector('.nav__logo');
+const getOrderBtn = document.querySelector('.get-order__btn');
 
 navBtnAbout.onclick = () => {
     document.querySelector('.about').scrollIntoView({ behavior: 'smooth' });
@@ -23,3 +24,8 @@ navBtnContacts.onclick = () => {
 logo.onclick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+getOrderBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.main-form').scrollIntoView({behavior: 'smooth'});
+})

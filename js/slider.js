@@ -148,9 +148,9 @@ slider.addEventListener('touchend', () => {
     if (!isSwiping) return;
     const swipeDistance = currentX - startX; // Вычисляем расстояние свайпа
     // Если свайп длиннее 50px, определяем направление
-    if (swipeDistance > 150) {
+    if (swipeDistance > 50) {
         slidePrev();
-    } else if (swipeDistance < -150) {
+    } else if (swipeDistance < -50) {
         slideNext();
     } else {
         return

@@ -1,6 +1,23 @@
 const header = document.querySelector('.header');
 const headerBanner = document.querySelector('.header__banner');
 
+// кнопка для прокручивания на верх страницы
+const arrowUp = document.querySelector('.up__arrow');
+
+arrowUp.onclick = function () {
+    window.scrollTo({ behavior: 'smooth', top: 0 });
+};
+
+window.onscroll = function () {
+    if (scrollY > 600) {
+        arrowUp.style.opacity = 1;
+        arrowUp.style.pointerEvents = 'auto';
+    } else {
+        arrowUp.style.opacity = 0;
+        arrowUp.style.pointerEvents = 'none';
+    }
+};
+
 window.addEventListener('scroll', () => {
     // проверяем на сколько прокрутился экран
     if (window.scrollY >= headerBanner.scrollHeight / 1.5) {
@@ -8,12 +25,12 @@ window.addEventListener('scroll', () => {
     } else {
         header.classList.remove('scrolled');
     }
-})
+});
 
 const bannerArrow = document.querySelector('.banner__arrow');
 bannerArrow.addEventListener('click', () => {
     document.querySelector('.about').scrollIntoView({behavior: 'smooth'});
-})
+});
 
 // АККОРДЕОН
 
@@ -73,5 +90,4 @@ function accordion(selector, onlyOne = false){
     })
 }
 
-accordion('#accordion-1', false);
-
+accordion('#accordion-1', true);

@@ -243,7 +243,7 @@
     .header__banner {
         height: 100dvh;
     }
-    .header__banner {
+    .header__banner::after {
         height: 100dvh;
     }
 

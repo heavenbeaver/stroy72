@@ -236,8 +236,8 @@
         font-size: .9rem;
     }
 
-    .banner__arrow {
-        bottom: 100px;
+    .header__banner {
+        height: 100dvh;
     }
 
     .header__text {

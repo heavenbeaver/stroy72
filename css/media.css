@@ -236,6 +236,10 @@
         font-size: .9rem;
     }
 
+    .banner__arrow {
+        bottom: 1% !important;
+    }
+
     .header__banner {
         height: 100dvh;
     }
@@ -248,7 +252,7 @@
     }
 
     .header__banner__title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .header__banner__title br:first-child {

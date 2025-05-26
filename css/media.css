@@ -243,6 +243,9 @@
     .header__banner {
         height: 100dvh;
     }
+    .header__banner {
+        height: 100dvh;
+    }
 
     .header__text {
         width: 80%;

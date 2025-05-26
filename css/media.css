@@ -240,13 +240,6 @@
         bottom: 1% !important;
     }
 
-    .header__banner {
-        height: 100dvh;
-    }
-    .header__banner::after {
-        height: 100dvh;
-    }
-
     .header__text {
         width: 80%;
         top: 50%;

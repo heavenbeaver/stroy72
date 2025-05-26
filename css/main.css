@@ -147,7 +147,7 @@ body {
 .header__banner {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-image: url(../res/img/projects//3d-rendering-loft-luxury-living-room-with-bookshelf.webp);
     background-repeat: no-repeat;
     background-position: 0 15%;
@@ -162,7 +162,7 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     z-index: 2;
 }
@@ -435,9 +435,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .accordion__header {
     position: relative;
 }
+
 .accordion__header::after {
     content: '';
     display: block;
@@ -454,6 +456,7 @@ body {
     transition: transform .4s;
     cursor: pointer;
 }
+
 .accordion__item.active .accordion__header::after {
     transform: translateY(-50%) rotate(360deg);
     background-image: url('../res/img/icons/banner-arrow.svg');
